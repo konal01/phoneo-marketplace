@@ -367,23 +367,23 @@ export const StoreProfileView: React.FC<StoreProfileViewProps> = ({
                 return (
                   <article
                     key={item.id}
-                    className="bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow relative"
+                    className="bg-white/95 backdrop-blur-xl rounded-2xl p-3.5 border border-teal-200/80 shadow-[0_8px_24px_-4px_rgba(13,148,136,0.12),0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_32px_-4px_rgba(13,148,136,0.22)] hover:border-teal-400 hover:-translate-y-1 transition-all duration-300 relative"
                   >
                     <div className="flex gap-3">
                       {/* Thumbnail & Badges */}
                       <div
                         onClick={() => onOpenInspectModal(item)}
-                        className="relative w-28 h-32 bg-surface-container-low rounded-lg overflow-hidden shrink-0 cursor-pointer"
+                        className="relative w-28 h-32 bg-gradient-to-br from-teal-50/70 via-white to-slate-50 border border-teal-100 rounded-xl overflow-hidden shrink-0 cursor-pointer p-1.5 flex items-center justify-center"
                       >
                         <img
                           alt={item.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain drop-shadow-sm"
                           src={item.image}
                         />
-                        <span className="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-[10px] font-bold shadow-sm">
+                        <span className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-gradient-to-r from-teal-600 to-emerald-500 text-white font-label-sm text-[10px] font-bold shadow-xs">
                           {item.grade}
                         </span>
-                        <span className="absolute bottom-1.5 left-1.5 px-1.5 py-0.2 rounded bg-surface-container-lowest/90 text-on-surface font-label-sm text-[9px] backdrop-blur-sm">
+                        <span className="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded bg-white/90 text-slate-700 font-label-sm text-[9px] backdrop-blur-sm shadow-xs border border-teal-100/60">
                           {item.batteryOrFeature}
                         </span>
                       </div>
@@ -935,15 +935,15 @@ export const StoreProfileView: React.FC<StoreProfileViewProps> = ({
               return (
                 <div
                   key={prod.id}
-                  className="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group"
+                  className="flex flex-col bg-white/95 hover:bg-white backdrop-blur-xl rounded-2xl overflow-hidden border border-teal-200/80 shadow-[0_10px_28px_-4px_rgba(13,148,136,0.12),0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_45px_-6px_rgba(13,148,136,0.22)] hover:border-teal-400 hover:-translate-y-1.5 transition-all duration-300 group"
                 >
-                  <div className="relative w-full h-56 bg-surface-container-low p-4 flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full h-56 bg-gradient-to-br from-teal-50/60 via-white to-slate-50/80 border-b border-teal-100/70 p-4 flex items-center justify-center overflow-hidden">
                     <img
                       alt={prod.name}
                       className="h-44 object-contain group-hover:scale-105 transition-transform duration-300"
                       src={prod.image}
                     />
-                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm">
+                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-gradient-to-r from-teal-600 to-emerald-500 text-white font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-xs">
                       <span className="material-symbols-outlined text-[13px]">verified</span>{' '}
                       {prod.grade}
                     </span>

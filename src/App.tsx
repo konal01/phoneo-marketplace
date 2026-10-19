@@ -24,6 +24,7 @@ import { PhoneDetailCatalogView } from './components/PhoneDetailCatalogView';
 import { SidePanelDrawer } from './components/SidePanelDrawer';
 import { AuthModal } from './components/AuthModal';
 import { SplashLoader } from './components/SplashLoader';
+import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(
@@ -277,14 +278,14 @@ export const App: React.FC = () => {
         {/* ========================================================== */}
         {isMobileLayout ? (
           /* Mobile Fixed Header */
-          <header className="sticky top-0 inset-x-0 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe">
+          <header className="sticky top-0 inset-x-0 z-40 bg-white/90 backdrop-blur-xl border-b border-teal-100/70 shadow-[0_2px_16px_rgba(13,148,136,0.06)] pt-safe">
             <div className="h-16 px-margin-mobile flex items-center justify-between gap-gutter-mobile">
               <div className="flex items-center gap-space-sm min-w-0">
                 <button
                   type="button"
                   onClick={() => setIsSidePanelOpen(true)}
                   aria-label="Open Navigation Menu"
-                  className="p-1.5 -ml-1 rounded-xl text-on-surface hover:bg-surface-container-high transition-colors"
+                  className="p-1.5 -ml-1 rounded-xl text-on-surface hover:bg-teal-50/80 transition-colors"
                 >
                   <span className="material-symbols-outlined text-[24px]">menu</span>
                 </button>
@@ -302,16 +303,16 @@ export const App: React.FC = () => {
                 <button
                   aria-label="Select Location"
                   onClick={() => setIsLocationModalOpen(true)}
-                  className="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-full text-on-surface transition-colors min-h-[36px]"
+                  className="flex items-center gap-1 bg-teal-50/80 hover:bg-teal-100/80 border border-teal-200/60 px-2.5 py-1 rounded-full text-on-surface transition-colors min-h-[34px]"
                   type="button"
                 >
-                  <span className="material-symbols-outlined text-primary text-[18px]">
+                  <span className="material-symbols-outlined text-primary text-[17px]">
                     location_on
                   </span>
-                  <span className="font-label-md text-label-md truncate max-w-[90px]">
+                  <span className="font-label-md text-label-md font-bold truncate max-w-[85px] text-slate-800">
                     {activeCity}
                   </span>
-                  <span className="material-symbols-outlined text-outline text-[16px]">
+                  <span className="material-symbols-outlined text-slate-400 text-[15px]">
                     keyboard_arrow_down
                   </span>
                 </button>
@@ -321,37 +322,37 @@ export const App: React.FC = () => {
                   href="https://seller.phoneo.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2.5 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary font-bold text-[11px] flex items-center gap-1 shrink-0 hover:bg-primary/20 transition-all"
+                  className="px-2.5 py-1 rounded-full border border-teal-200 bg-teal-50/90 text-teal-700 font-bold text-[11px] flex items-center gap-1 shrink-0 hover:bg-teal-100 hover:border-teal-300 transition-all shadow-xs"
                   title="Phoneo Seller CRM (seller.phoneo.in)"
                 >
-                  <span className="material-symbols-outlined text-[14px]">storefront</span>
+                  <span className="material-symbols-outlined text-[13px]">storefront</span>
                   <span>Seller</span>
                   <span className="material-symbols-outlined text-[10px] opacity-70">open_in_new</span>
                 </a>
                 <button
                   aria-label="Search"
                   onClick={() => handleNavigate('catalog')}
-                  className="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-white/80 backdrop-blur-sm transition-all"
+                  className="w-9 h-9 flex items-center justify-center rounded-full text-slate-600 hover:text-primary hover:bg-teal-50/80 transition-all"
                   type="button"
                 >
-                  <span className="material-symbols-outlined text-[22px]">search</span>
+                  <span className="material-symbols-outlined text-[20px]">search</span>
                 </button>
                 <button
                   aria-label="Notifications"
                   onClick={() =>
                     showToast('Notifications', 'No unread alerts in your active hub.')
                   }
-                  className="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-white/80 backdrop-blur-sm transition-all relative"
+                  className="w-9 h-9 flex items-center justify-center rounded-full text-slate-600 hover:text-primary hover:bg-teal-50/80 transition-all relative"
                   type="button"
                 >
-                  <span className="material-symbols-outlined text-[22px]">notifications</span>
-                  <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-tertiary-container"></span>
+                  <span className="material-symbols-outlined text-[20px]">notifications</span>
+                  <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-500 ring-2 ring-white"></span>
                 </button>
                 {!currentUser ? (
                   <button
                     aria-label="Register or Login"
                     onClick={() => setIsLoginModalOpen(true)}
-                    className="px-3 py-1.5 rounded-full bg-gradient-to-r from-primary to-teal-600 hover:brightness-105 text-on-primary font-bold text-[11px] flex items-center gap-1 shrink-0 active:scale-95 transition-all shadow-[0_4px_12px_rgba(0,106,97,0.3)]"
+                    className="px-3 py-1.5 rounded-full bg-gradient-to-r from-teal-600 to-teal-500 hover:brightness-105 text-white font-bold text-[11px] flex items-center gap-1 shrink-0 active:scale-95 transition-all shadow-[0_4px_12px_rgba(13,148,136,0.25)]"
                     type="button"
                   >
                     <span className="material-symbols-outlined text-[15px]">account_circle</span>
@@ -361,7 +362,7 @@ export const App: React.FC = () => {
                   <button
                     aria-label="User Profile"
                     onClick={() => handleNavigate('account')}
-                    className="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-teal-600 text-on-primary font-bold text-xs flex items-center justify-center uppercase shadow-[0_3px_10px_rgba(0,106,97,0.25)] ring-2 ring-white"
+                    className="w-8 h-8 rounded-full bg-gradient-to-r from-teal-600 to-teal-500 text-white font-bold text-xs flex items-center justify-center uppercase shadow-[0_3px_10px_rgba(13,148,136,0.25)] ring-2 ring-white"
                     type="button"
                   >
                     {currentUser.name.charAt(0)}
@@ -372,14 +373,14 @@ export const App: React.FC = () => {
           </header>
         ) : (
           /* Desktop Sticky Header with Frosted Glassmorphism & Box Shadow */
-          <header className="sticky top-0 w-full z-40 bg-white/80 backdrop-blur-2xl border-b border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.04),inset_0_1px_1px_rgba(255,255,255,0.8)]">
+          <header className="sticky top-0 w-full z-40 bg-white/90 backdrop-blur-2xl border-b border-teal-100/80 shadow-[0_4px_24px_rgba(13,148,136,0.06)]">
             <div className="w-full max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-4 lg:gap-8 py-3">
               {/* Left Branding & Hub */}
               <div className="flex items-center gap-3 lg:gap-4 shrink-0">
                 <button
                   type="button"
                   onClick={() => setIsSidePanelOpen(true)}
-                  className="p-2 rounded-xl bg-white/70 hover:bg-white backdrop-blur-md border border-slate-200/60 shadow-[0_2px_6px_rgba(0,0,0,0.03)] text-on-surface flex items-center justify-center transition-all hover:scale-105 active:scale-95"
+                  className="p-2 rounded-xl bg-white hover:bg-teal-50/80 backdrop-blur-md border border-teal-100 shadow-[0_2px_8px_rgba(13,148,136,0.06)] text-on-surface flex items-center justify-center transition-all hover:scale-105 active:scale-95"
                   aria-label="Open Side Navigation Menu"
                   title="Menu & Hubs"
                 >
@@ -398,16 +399,16 @@ export const App: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setIsLocationModalOpen(true)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/70 hover:bg-white backdrop-blur-md border border-slate-200/60 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all text-left shrink-0"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-teal-50/80 hover:bg-teal-100/80 backdrop-blur-md border border-teal-200/80 shadow-[0_2px_8px_rgba(13,148,136,0.06)] hover:shadow-[0_4px_12px_rgba(13,148,136,0.12)] transition-all text-left shrink-0"
                 >
-                  <span className="material-symbols-outlined text-[18px] text-primary">
+                  <span className="material-symbols-outlined text-[18px] text-teal-600">
                     location_on
                   </span>
                   <div className="flex flex-col leading-none">
-                    <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-[10px]">
+                    <span className="font-label-sm text-label-sm text-slate-500 uppercase tracking-wider text-[10px]">
                       City Hub
                     </span>
-                    <span className="font-title-sm text-title-sm text-on-surface flex items-center gap-0.5 text-xs font-bold">
+                    <span className="font-title-sm text-title-sm text-slate-900 flex items-center gap-0.5 text-xs font-bold">
                       {activeCity}, CG{' '}
                       <span className="material-symbols-outlined text-[14px]">expand_more</span>
                     </span>
@@ -418,11 +419,11 @@ export const App: React.FC = () => {
               {/* Responsive Center Search Bar */}
               <div className="flex-1 max-w-xl xl:max-w-2xl min-w-[200px] hidden md:block">
                 <div className="relative flex items-center">
-                  <span className="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">
+                  <span className="material-symbols-outlined absolute left-3.5 text-slate-400 text-[20px] pointer-events-none">
                     search
                   </span>
                   <input
-                    className="w-full pl-10 pr-12 lg:pr-24 py-2 rounded-full bg-white/75 backdrop-blur-md text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.02),0_2px_8px_rgba(0,0,0,0.02)] focus:ring-2 focus:ring-primary focus:border-primary/50 focus:shadow-[0_8px_20px_rgba(0,106,97,0.1)] border border-slate-200/80 transition-all"
+                    className="w-full pl-10 pr-12 lg:pr-24 py-2 rounded-full bg-white/90 backdrop-blur-md text-on-surface placeholder:text-slate-400 font-body-md text-body-md focus:outline-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.02),0_2px_8px_rgba(13,148,136,0.05)] focus:ring-2 focus:ring-teal-400/50 focus:border-teal-500 border border-teal-200/80 transition-all"
                     placeholder="Search iPhone, Samsung, Vivo, OnePlus in your city..."
                     type="text"
                     onKeyDown={(e) => {
@@ -431,7 +432,7 @@ export const App: React.FC = () => {
                   />
                   <button
                     onClick={() => handleNavigate('catalog')}
-                    className="absolute right-1 px-2.5 lg:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-primary to-teal-700 text-on-primary font-label-md text-label-md hover:brightness-105 shadow-[0_3px_10px_rgba(0,106,97,0.3)] transition-all flex items-center justify-center gap-1 text-xs font-bold shrink-0"
+                    className="absolute right-1 px-2.5 lg:px-3.5 py-1.5 rounded-full bg-gradient-to-r from-teal-600 to-teal-500 text-white font-label-md text-label-md hover:brightness-105 shadow-[0_3px_10px_rgba(13,148,136,0.25)] transition-all flex items-center justify-center gap-1 text-xs font-bold shrink-0"
                     aria-label="Search"
                     title="Search Phones"
                   >
@@ -441,13 +442,13 @@ export const App: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right Action Elements (Uncongested Spacing, 'All Phones' removed) */}
+              {/* Right Action Elements */}
               <div className="flex items-center gap-2.5 lg:gap-3 shrink-0">
                 <a
                   href="https://seller.phoneo.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden lg:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-primary/30 bg-primary/5 hover:bg-primary/10 text-primary font-label-md text-xs font-bold transition-all shadow-[0_2px_8px_rgba(0,106,97,0.08)] hover:shadow-[0_4px_12px_rgba(0,106,97,0.15)] shrink-0"
+                  className="hidden lg:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-teal-200 bg-teal-50/80 hover:bg-teal-100 text-teal-700 font-label-md text-xs font-bold transition-all shadow-xs shrink-0"
                 >
                   <span className="material-symbols-outlined text-[16px]">storefront</span>
                   <span>Become a Seller</span>
@@ -458,7 +459,7 @@ export const App: React.FC = () => {
                     setStartAuctionPrefill('');
                     setIsStartAuctionModalOpen(true);
                   }}
-                  className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-primary to-teal-700 text-on-primary text-xs font-bold hover:brightness-105 transition-all shadow-[0_4px_12px_rgba(0,106,97,0.3)] hover:shadow-[0_6px_16px_rgba(0,106,97,0.4)] hover:-translate-y-0.5 active:scale-95 shrink-0"
+                  className="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-teal-600 to-teal-500 text-white text-xs font-bold hover:brightness-105 transition-all shadow-[0_4px_12px_rgba(13,148,136,0.25)] hover:shadow-[0_6px_16px_rgba(13,148,136,0.35)] hover:-translate-y-0.5 active:scale-95 shrink-0"
                 >
                   <span className="material-symbols-outlined text-[16px]">currency_rupee</span>
                   <span>Sell Old Phone</span>
@@ -469,19 +470,19 @@ export const App: React.FC = () => {
                     onClick={() =>
                       showToast('Notifications', `All partner stores in ${activeCity} verified.`)
                     }
-                    className="w-9 h-9 rounded-full bg-white/70 hover:bg-white backdrop-blur-md border border-slate-200/60 flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_2px_6px_rgba(0,0,0,0.03)] transition-all relative"
+                    className="w-9 h-9 rounded-full bg-white hover:bg-teal-50/80 backdrop-blur-md border border-teal-100 flex items-center justify-center text-slate-600 hover:text-teal-600 shadow-[0_2px_6px_rgba(13,148,136,0.06)] transition-all relative"
                   >
                     <span className="material-symbols-outlined text-[20px]">notifications</span>
-                    <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container"></span>
+                    <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-amber-500 ring-2 ring-white"></span>
                   </button>
                   <button
                     aria-label="Saved Items"
                     onClick={() => handleNavigate('account')}
-                    className="w-9 h-9 rounded-full bg-white/70 hover:bg-white backdrop-blur-md border border-slate-200/60 flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-[0_2px_6px_rgba(0,0,0,0.03)] transition-all relative"
+                    className="w-9 h-9 rounded-full bg-white hover:bg-teal-50/80 backdrop-blur-md border border-teal-100 flex items-center justify-center text-slate-600 hover:text-teal-600 shadow-[0_2px_6px_rgba(13,148,136,0.06)] transition-all relative"
                   >
                     <span className="material-symbols-outlined text-[20px]">favorite</span>
                     {wishlist.length > 0 && (
-                      <span className="absolute -top-1 -right-1 bg-error text-on-error text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-xs">
+                      <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-xs">
                         {wishlist.length}
                       </span>
                     )}
@@ -490,7 +491,7 @@ export const App: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setIsLoginModalOpen(true)}
-                      className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-teal-600 hover:brightness-105 text-on-primary font-bold text-xs shadow-[0_4px_14px_rgba(0,106,97,0.35)] hover:shadow-[0_8px_22px_rgba(0,106,97,0.45)] hover:-translate-y-0.5 transition-all active:scale-95 ml-1 shrink-0"
+                      className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-teal-600 to-teal-500 hover:brightness-105 text-white font-bold text-xs shadow-[0_4px_14px_rgba(13,148,136,0.25)] hover:shadow-[0_8px_20px_rgba(13,148,136,0.35)] hover:-translate-y-0.5 transition-all active:scale-95 ml-1 shrink-0"
                     >
                       <span className="material-symbols-outlined text-[17px]">account_circle</span>
                       <span>Register / Login</span>
@@ -500,9 +501,9 @@ export const App: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => handleNavigate('account')}
-                        className="flex items-center gap-2 pl-1.5 pr-3 py-1 rounded-full bg-white/80 hover:bg-white backdrop-blur-md text-on-surface text-xs font-bold transition-all border border-slate-200/60 shadow-[0_2px_8px_rgba(0,0,0,0.04)] ring-1 ring-primary/20"
+                        className="flex items-center gap-2 pl-1.5 pr-3 py-1 rounded-full bg-white hover:bg-teal-50/80 backdrop-blur-md text-slate-800 text-xs font-bold transition-all border border-teal-200/80 shadow-[0_2px_8px_rgba(13,148,136,0.08)] ring-1 ring-teal-500/20"
                       >
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-primary to-teal-600 text-on-primary font-bold text-[11px] flex items-center justify-center uppercase shadow-xs">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-teal-600 to-teal-500 text-white font-bold text-[11px] flex items-center justify-center uppercase shadow-xs">
                           {currentUser.name.charAt(0)}
                         </div>
                         <span className="max-w-[100px] truncate">{currentUser.name}</span>
@@ -526,7 +527,7 @@ export const App: React.FC = () => {
         {/* ========================================================== */}
         {/* MAIN BODY                                                  */}
         {/* ========================================================== */}
-        <main className="flex-1 w-full bg-surface">
+        <main className="flex-1 w-full bg-transparent relative">
           {activeTab === 'home' && (
             <HomeMarketplaceView
               isMobileMode={isMobileLayout}
@@ -639,25 +640,42 @@ export const App: React.FC = () => {
         </main>
 
         {/* ========================================================== */}
-        {/* FOOTER: MOBILE BOTTOM NAV vs DESKTOP FOOTER                */}
+        {/* SCRAPED PHONEO.IN FOOTER                                   */}
         {/* ========================================================== */}
-        {isMobileLayout ? (
-          /* Mobile Fixed Bottom Navigation Bar */
-          <nav className="sticky bottom-0 inset-x-0 z-40 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] border-t border-surface-container">
+        <Footer
+          onNavigate={handleNavigate}
+          onSelectBrand={() => {
+            handleNavigate('catalog');
+          }}
+          onOpenStartAuctionModal={(prefill) => {
+            setStartAuctionPrefill(prefill || '');
+            setIsStartAuctionModalOpen(true);
+          }}
+          showToast={showToast}
+        />
+
+        {/* ========================================================== */}
+        {/* MOBILE STICKY BOTTOM NAVIGATION BAR                        */}
+        {/* ========================================================== */}
+        {isMobileLayout && (
+          <nav className="fixed bottom-0 inset-x-0 z-40 pb-safe bg-white/95 backdrop-blur-xl shadow-[0_-4px_24px_rgba(13,148,136,0.08)] border-t border-teal-100/80">
             <div className="flex justify-around items-center h-16 px-gutter-mobile">
               <button
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] transition-colors ${
-                  activeTab === 'home' ? 'text-primary font-bold' : 'text-on-surface-variant'
+                className={`flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[48px] transition-all relative ${
+                  activeTab === 'home' ? 'text-teal-600 font-bold scale-105' : 'text-slate-500 hover:text-slate-800'
                 }`}
                 onClick={() => handleNavigate('home')}
                 type="button"
               >
+                {activeTab === 'home' && (
+                  <span className="absolute -top-1.5 w-6 h-1 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(13,148,136,0.6)]"></span>
+                )}
                 <span className="material-symbols-outlined text-[24px]">explore</span>
                 <span className="font-label-sm text-[11px]">Explore</span>
               </button>
               <button
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] transition-colors ${
-                  activeTab === 'catalog' || activeTab === 'device-detail' ? 'text-primary font-bold' : 'text-on-surface-variant'
+                className={`flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[48px] transition-all relative ${
+                  activeTab === 'catalog' || activeTab === 'device-detail' ? 'text-teal-600 font-bold scale-105' : 'text-slate-500 hover:text-slate-800'
                 }`}
                 onClick={() => {
                   setSelectedPhoneDetail(null);
@@ -665,176 +683,53 @@ export const App: React.FC = () => {
                 }}
                 type="button"
               >
+                {(activeTab === 'catalog' || activeTab === 'device-detail') && (
+                  <span className="absolute -top-1.5 w-6 h-1 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(13,148,136,0.6)]"></span>
+                )}
                 <span className="material-symbols-outlined text-[24px]">smartphone</span>
                 <span className="font-label-sm text-[11px]">Phones</span>
               </button>
               <button
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] transition-colors ${
-                  activeTab === 'stores' ? 'text-primary font-bold' : 'text-on-surface-variant'
+                className={`flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[48px] transition-all relative ${
+                  activeTab === 'stores' ? 'text-teal-600 font-bold scale-105' : 'text-slate-500 hover:text-slate-800'
                 }`}
                 onClick={() => handleNavigate('stores')}
                 type="button"
               >
+                {activeTab === 'stores' && (
+                  <span className="absolute -top-1.5 w-6 h-1 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(13,148,136,0.6)]"></span>
+                )}
                 <span className="material-symbols-outlined text-[24px]">storefront</span>
                 <span className="font-label-sm text-[11px]">Stores</span>
               </button>
               <button
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] transition-colors ${
-                  activeTab === 'auctions' ? 'text-primary font-bold' : 'text-on-surface-variant'
+                className={`flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[48px] transition-all relative ${
+                  activeTab === 'auctions' ? 'text-teal-600 font-bold scale-105' : 'text-slate-500 hover:text-slate-800'
                 }`}
                 onClick={() => handleNavigate('auctions', 'retailer')}
                 type="button"
               >
+                {activeTab === 'auctions' && (
+                  <span className="absolute -top-1.5 w-6 h-1 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(13,148,136,0.6)]"></span>
+                )}
                 <span className="material-symbols-outlined text-[24px]">gavel</span>
                 <span className="font-label-sm text-[11px]">Auctions</span>
               </button>
               <button
-                className={`flex flex-col items-center justify-center gap-0.5 min-w-[44px] min-h-[44px] transition-colors ${
-                  activeTab === 'account' ? 'text-primary font-bold' : 'text-on-surface-variant'
+                className={`flex flex-col items-center justify-center gap-0.5 min-w-[48px] min-h-[48px] transition-all relative ${
+                  activeTab === 'account' ? 'text-teal-600 font-bold scale-105' : 'text-slate-500 hover:text-slate-800'
                 }`}
                 onClick={() => handleNavigate('account')}
                 type="button"
               >
+                {activeTab === 'account' && (
+                  <span className="absolute -top-1.5 w-6 h-1 rounded-full bg-teal-500 shadow-[0_0_8px_rgba(13,148,136,0.6)]"></span>
+                )}
                 <span className="material-symbols-outlined text-[24px]">account_circle</span>
                 <span className="font-label-sm text-[11px]">Account</span>
               </button>
             </div>
           </nav>
-        ) : (
-          /* Desktop Complete Footer */
-          <footer className="w-full bg-surface-container-low mt-16 pt-12 pb-8 border-t border-surface-container">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10">
-                <div className="lg:col-span-2 space-y-4">
-                  <div className="flex items-center">
-                    <img
-                      alt="Phoneo Logo"
-                      className="h-10 w-auto object-contain"
-                      src={PHONEO_LOGO_URL}
-                    />
-                  </div>
-                  <p className="font-body-md text-body-md text-on-surface-variant max-w-sm">
-                    India's pioneering hyper-local recommerce network connecting verified local
-                    smartphone retailers with conscious consumers for certified pre-owned tech and
-                    live competitive buyback bidding.
-                  </p>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <span className="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-                      <span className="material-symbols-outlined text-[14px] text-primary">
-                        verified
-                      </span>{' '}
-                      GST Verified
-                    </span>
-                    <span className="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-                      <span className="material-symbols-outlined text-[14px] text-primary">lock</span>{' '}
-                      100% Escrow &amp; UPI
-                    </span>
-                    <span className="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-                      <span className="material-symbols-outlined text-[14px] text-primary">
-                        check_circle
-                      </span>{' '}
-                      32-Point Inspected
-                    </span>
-                  </div>
-                  <div className="pt-2">
-                    <a
-                      href="https://seller.phoneo.in/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-on-primary font-bold text-xs hover:brightness-105 transition-all shadow-sm"
-                    >
-                      <span className="material-symbols-outlined text-[16px]">storefront</span>
-                      <span>Become a Seller (Partner Portal)</span>
-                      <span className="material-symbols-outlined text-[13px] opacity-80">open_in_new</span>
-                    </a>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <h4 className="font-title-sm text-title-sm text-on-surface font-bold">
-                    Central India Hubs
-                  </h4>
-                  <ul className="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
-                    {PARTNER_STORES.map((s) => (
-                      <li key={s.id}>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setSelectedStoreId(s.id);
-                            setActiveCity(s.city);
-                            handleNavigate('stores');
-                          }}
-                          className="hover:text-primary transition-colors text-left"
-                        >
-                          {s.name} ({s.city})
-                        </button>
-                      </li>
-                    ))}
-                    <li>
-                      <button
-                        type="button"
-                        onClick={() => setIsLocationModalOpen(true)}
-                        className="hover:text-primary transition-colors text-primary font-semibold"
-                      >
-                        All 6 Regional Cities →
-                      </button>
-                    </li>
-                  </ul>
-                </div>
-                <div className="space-y-3">
-                  <h4 className="font-title-sm text-title-sm text-on-surface font-bold">
-                    Top Certified Models
-                  </h4>
-                  <ul className="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
-                    {['Apple iPhone 15 Pro Max', 'Apple iPhone 14 & 13 Series', 'Samsung Galaxy S24 Ultra 5G', 'OnePlus 12 & 11R Models', 'Google Pixel 8 Pro'].map(
-                      (m) => (
-                        <li key={m}>
-                          <button
-                            type="button"
-                            onClick={() => handleNavigate('home')}
-                            className="hover:text-primary transition-colors"
-                          >
-                            {m}
-                          </button>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-                <div className="space-y-3">
-                  <h4 className="font-title-sm text-title-sm text-on-surface font-bold">
-                    Platform &amp; Policies
-                  </h4>
-                  <ul className="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
-                    {['Instant Valuation Algorithm', 'Shopkeeper Auction Rules', 'Phoneo 6-Month Warranty', '7-Day Replacement Policy', 'Store Verification Standards'].map(
-                      (p) => (
-                        <li key={p}>
-                          <button
-                            type="button"
-                            onClick={() => showToast(p, 'Standard operating guideline verified.')}
-                            className="hover:text-primary transition-colors"
-                          >
-                            {p}
-                          </button>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-              </div>
-              <div className="pt-8 mt-4 flex flex-col md:flex-row items-center justify-between gap-4 text-on-surface-variant font-body-sm text-body-sm border-t border-surface-container">
-                <p>
-                  © 2026 Phoneo Technologies Pvt. Ltd. All rights reserved. Connecting Indian smartphone
-                  retail with trusted recommerce.
-                </p>
-                <div className="flex items-center gap-6">
-                  <span className="hover:text-primary transition-colors cursor-pointer">Buyer Terms</span>
-                  <span className="hover:text-primary transition-colors cursor-pointer">Seller Conduct</span>
-                  <span className="hover:text-primary transition-colors cursor-pointer">Security &amp; Anti-Theft</span>
-                  <span className="hover:text-primary transition-colors cursor-pointer">Contact Helpdesk</span>
-                </div>
-              </div>
-            </div>
-          </footer>
         )}
       </div>
 

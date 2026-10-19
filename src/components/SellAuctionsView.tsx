@@ -367,11 +367,11 @@ export const SellAuctionsView: React.FC<SellAuctionsViewProps> = ({
               const customVal = customBidValues[auc.id] || '';
               return (
                 <article key={auc.id} className="px-margin-mobile">
-                  <div className="rounded-2xl bg-surface-container-lowest shadow-md p-4 flex flex-col gap-3 relative overflow-hidden">
+                  <div className="rounded-2xl bg-white/95 backdrop-blur-xl border border-teal-200/80 shadow-[0_8px_24px_-4px_rgba(13,148,136,0.12),0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_32px_-4px_rgba(13,148,136,0.22)] hover:border-teal-400 hover:-translate-y-1 transition-all duration-300 p-4 flex flex-col gap-3 relative overflow-hidden">
                     {/* Top bar: live countdown & condition badges */}
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm flex items-center gap-1">
+                        <span className="px-2 py-0.5 rounded-full bg-teal-50 border border-teal-200 text-teal-700 font-label-sm text-label-sm flex items-center gap-1 font-bold">
                           <span className="material-symbols-outlined text-[13px]">verified_user</span>
                           32-Pt Inspected
                         </span>
@@ -1030,10 +1030,10 @@ export const SellAuctionsView: React.FC<SellAuctionsViewProps> = ({
               return (
                 <div
                   key={auc.id}
-                  className="rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] overflow-hidden"
+                  className="rounded-2xl bg-white/95 backdrop-blur-xl border border-teal-200/80 shadow-[0_10px_28px_-4px_rgba(13,148,136,0.12),0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_18px_38px_-4px_rgba(13,148,136,0.22)] hover:border-teal-400 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                 >
                   {/* Card Header & Timer Banner */}
-                  <div className="bg-surface-container-high px-5 py-3 flex items-center justify-between">
+                  <div className="bg-teal-50/80 border-b border-teal-100/70 px-5 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="px-2.5 py-1 rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold flex items-center gap-1">
                         <span className="w-2 h-2 rounded-full bg-on-error animate-ping"></span>{' '}

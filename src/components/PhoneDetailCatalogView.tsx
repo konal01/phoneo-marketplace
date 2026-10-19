@@ -1010,18 +1010,18 @@ export const PhoneDetailCatalogView: React.FC<PhoneDetailCatalogViewProps> = ({
               return (
                 <div
                   key={prod.id}
-                  className="bg-white/95 backdrop-blur-xl rounded-2xl border border-teal-900/10 hover:border-teal-700/40 shadow-[0_12px_32px_-4px_rgba(0,106,97,0.18)] hover:shadow-[0_22px_45px_-6px_rgba(0,106,97,0.3)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                  className="bg-white/95 hover:bg-white backdrop-blur-xl rounded-2xl border border-teal-200/80 hover:border-teal-400 shadow-[0_10px_28px_-4px_rgba(13,148,136,0.12),0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_45px_-6px_rgba(13,148,136,0.22)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
                 >
                   {/* Card Header & Image */}
                   <div className="p-4 space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
                         <BrandLogo brand={prod.brand} className="w-5 h-5" />
-                        <span className="text-xs font-bold text-on-surface uppercase">
+                        <span className="text-xs font-bold text-slate-800 uppercase">
                           {prod.brand}
                         </span>
                       </div>
-                      <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold">
+                      <span className="px-2 py-0.5 rounded-full bg-gradient-to-r from-teal-600 to-emerald-500 text-white text-[10px] font-bold shadow-xs">
                         {prod.grade}
                       </span>
                     </div>
@@ -1032,16 +1032,16 @@ export const PhoneDetailCatalogView: React.FC<PhoneDetailCatalogViewProps> = ({
                         onSelectProduct(prod);
                         setViewMode('detail');
                       }}
-                      className="h-44 flex items-center justify-center p-2 cursor-pointer bg-surface-container-low/50 rounded-xl relative group-hover:bg-surface-container-low transition-colors"
+                      className="h-44 flex items-center justify-center p-2.5 cursor-pointer bg-gradient-to-br from-teal-50/60 via-white to-slate-50/80 border border-teal-100/70 rounded-xl relative group-hover:scale-105 transition-transform duration-300 shadow-xs"
                     >
                       <img
                         src={prod.image}
                         alt={prod.name}
-                        className="max-h-full max-w-full object-contain drop-shadow transition-transform duration-300 group-hover:scale-105"
+                        className="max-h-full max-w-full object-contain drop-shadow-sm"
                       />
 
                       {isVivoY19 && (
-                        <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-primary text-on-primary text-[9px] font-bold shadow-sm">
+                        <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-teal-600 text-white text-[9px] font-bold shadow-xs">
                           ID #88782
                         </span>
                       )}
@@ -1054,27 +1054,27 @@ export const PhoneDetailCatalogView: React.FC<PhoneDetailCatalogViewProps> = ({
                           onSelectProduct(prod);
                           setViewMode('detail');
                         }}
-                        className="text-sm font-bold text-on-surface line-clamp-1 hover:text-primary transition-colors cursor-pointer"
+                        className="text-sm font-bold text-slate-900 line-clamp-1 hover:text-teal-700 transition-colors cursor-pointer"
                       >
                         {prod.name}
                       </h3>
-                      <p className="text-[11px] text-on-surface-variant line-clamp-1">
+                      <p className="text-[11px] text-slate-500 line-clamp-1">
                         {prod.specs}
                       </p>
                     </div>
 
                     {/* Feature Pill */}
-                    <div className="flex items-center gap-1.5 text-[10px] text-on-surface-variant bg-surface-container-low px-2 py-1 rounded-lg">
-                      <span className="material-symbols-outlined text-[13px] text-primary">
+                    <div className="flex items-center gap-1.5 text-[10px] text-slate-600 bg-teal-50/80 border border-teal-100/60 px-2 py-1 rounded-lg">
+                      <span className="material-symbols-outlined text-[13px] text-teal-600">
                         {prod.featureIcon || 'verified'}
                       </span>
-                      <span className="truncate">{prod.batteryOrFeature}</span>
+                      <span className="truncate font-medium">{prod.batteryOrFeature}</span>
                     </div>
 
                     {/* Store Name & Distance */}
-                    <div className="text-[11px] text-on-surface-variant flex items-center justify-between pt-1 border-t border-outline-variant/20">
-                      <span className="truncate font-medium">{prod.storeName}</span>
-                      <span className="font-bold text-primary shrink-0">{prod.distance}</span>
+                    <div className="text-[11px] text-slate-500 flex items-center justify-between pt-1 border-t border-slate-100">
+                      <span className="truncate font-medium text-slate-700">{prod.storeName}</span>
+                      <span className="font-bold text-teal-700 shrink-0">{prod.distance}</span>
                     </div>
                   </div>
 
@@ -1082,14 +1082,14 @@ export const PhoneDetailCatalogView: React.FC<PhoneDetailCatalogViewProps> = ({
                   <div className="p-4 pt-0 space-y-2.5">
                     <div className="flex items-baseline justify-between">
                       <div>
-                        <div className="text-base font-extrabold text-on-surface">
+                        <div className="text-base font-extrabold text-slate-900">
                           {formatRupee(prod.price)}
                         </div>
-                        <div className="text-[10px] text-on-surface-variant/70 line-through">
+                        <div className="text-[10px] text-slate-400 line-through">
                           {formatRupee(prod.originalPrice)}
                         </div>
                       </div>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200/80">
                         {prod.discountPercent}% OFF
                       </span>
                     </div>
@@ -1100,7 +1100,7 @@ export const PhoneDetailCatalogView: React.FC<PhoneDetailCatalogViewProps> = ({
                         onSelectProduct(prod);
                         setViewMode('detail');
                       }}
-                      className="w-full py-2.5 rounded-xl bg-gradient-to-r from-primary to-teal-700 hover:brightness-105 text-on-primary text-xs font-bold transition-all text-center flex items-center justify-center gap-1.5 shadow-[0_4px_12px_rgba(0,106,97,0.3)] hover:shadow-[0_6px_18px_rgba(0,106,97,0.4)] hover:-translate-y-0.5 active:scale-95"
+                      className="w-full py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-500 hover:to-teal-400 text-white text-xs font-bold transition-all text-center flex items-center justify-center gap-1.5 shadow-[0_4px_12px_rgba(13,148,136,0.25)] hover:shadow-[0_6px_18px_rgba(13,148,136,0.35)] hover:-translate-y-0.5 active:scale-95"
                     >
                       <span>View Deal</span>
                       <span className="material-symbols-outlined text-[14px]">arrow_forward</span>

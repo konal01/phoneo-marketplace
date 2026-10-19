@@ -52,7 +52,7 @@ export const SellerContactButtons: React.FC<SellerContactButtonsProps> = ({
       <a
         href={`tel:${phone}`}
         aria-label={`Call ${product.storeName}`}
-        className={`${base} bg-gradient-to-r from-primary to-teal-700 text-on-primary shadow-[0_4px_14px_rgba(0,106,97,0.28)] hover:shadow-[0_6px_18px_rgba(0,106,97,0.38)] hover:-translate-y-0.5 hover:brightness-105`}
+        className={`${base} bg-gradient-to-r from-teal-600 to-teal-500 text-white shadow-[0_4px_14px_rgba(13,148,136,0.25)] hover:shadow-[0_6px_18px_rgba(13,148,136,0.35)] hover:-translate-y-0.5 hover:brightness-105`}
       >
         <span className={`material-symbols-outlined leading-none ${s.icon}`}>call</span>
         <span className="truncate">Call Seller</span>
