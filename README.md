@@ -2,7 +2,7 @@
 
 A high-fidelity, responsive React + TypeScript + Tailwind CSS application built faithfully from the [Stitch Design System](https://stitch.withgoogle.com/projects/7145556672694038565) (*Teal Pulse Commerce* theme).
 
-## 🌟 Highlights & Features
+##  Highlights & Features
 
 ### 1. Unified Responsive & Multi-View Architecture
 - **Auto Mode**: Adapts fluidly between Mobile Layout (`< 768px`) and Desktop Layout (`≥ 768px`).
@@ -47,7 +47,7 @@ A high-fidelity, responsive React + TypeScript + Tailwind CSS application built 
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 ```bash
 cd phoneo-marketplace
@@ -55,7 +55,3 @@ npm install
 npm run dev
 ```
 
-Visit the local server in your browser:
-```
-http://localhost:5174/
-```
